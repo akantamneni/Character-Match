@@ -1,0 +1,61 @@
+first = open("first.txt", "r+")
+
+second = open("second.txt", "r+")
+
+new = open("matches.txt", "w")
+
+one = []
+three = []
+
+two = []
+four = []
+
+result = []
+
+for line in first.readlines():
+    one.append(line)
+for element in one:
+    print(element, end="")
+
+print("\n")
+
+for line in second.readlines():
+    two.append(line)
+for element in two:
+    print(element, end="")
+
+for group in one:
+    for char in group:
+        three.append(char)
+
+print("\n")
+
+print(three)
+
+for group in two:
+    for char in group:
+        four.append(char)
+
+print("\n")
+
+print(four)
+
+i = 0
+
+while i < len(three):
+    if three[i] == four[i]:
+        result.append(three[i])
+        i += 1
+    else:
+        result.append("*")
+        i += 1
+
+print("\n")
+
+print(result)
+
+x = 0
+
+while x < len(result):
+    new.write(result[x])
+    x += 1
